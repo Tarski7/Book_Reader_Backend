@@ -51,7 +51,6 @@ public class BookController2 {
 	@PutMapping("/{id}")
 	public Book editBook(@PathVariable int id, @RequestBody Book editedBook) {
 		Book book = bookRepository.findOneById(id);
-		//book.setTitle(editedBook.getTitle());
 		book.setTitle(editedBook.getTitle());
 		bookRepository.save(book);
 		return new Book();	
