@@ -52,6 +52,10 @@ public class BookController2 {
 	public Book editBook(@PathVariable int id, @RequestBody Book editedBook) {
 		Book book = bookRepository.findOneById(id);
 		book.setTitle(editedBook.getTitle());
+		book.setAuthor(editedBook.getAuthor());
+		book.setIsbn(editedBook.getIsbn());
+		book.setPublisher(editedBook.getPublisher());
+		book.setType(editedBook.getType());
 		bookRepository.save(book);
 		return new Book();	
 	}
